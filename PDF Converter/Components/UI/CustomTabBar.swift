@@ -9,31 +9,26 @@ import SwiftUI
 
 struct CustomTabBar: View {
     var action: () -> Void
-    
+
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.white)
-                .frame(height: 70)
-                .shadow(color: .black.opacity(0.1), radius: 6, y: -2)
-                .ignoresSafeArea(edges: .bottom)
-            
-            Button(action: {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                    action()
-                }
-            }) {
-                Image(systemName: "plus")
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(24)
-                    .background(Color.blue)
-                    .clipShape(Circle())
-                    .shadow(color: .black.opacity(0.2), radius: 6, x: 0, y: 4)
-                    .scaleEffect(1.0)
+        Rectangle()
+            .frame(height: 1)
+            .foregroundColor(Color.white.opacity(0.5)) // или светло-серый
+            .edgesIgnoringSafeArea(.horizontal)
+        
+        HStack {
+            Spacer()
+            Button(action: action) {
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .foregroundColor(.blue)
+                    .shadow(radius: 4)
             }
-            .offset(y: -25)
+            Spacer()
         }
+        .frame(height: 80)
+        .background(Color(.systemGray6))
     }
 }
 
