@@ -11,13 +11,16 @@
 		6DA394952EA7071600335E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA394912EA7071600335E5E /* ContentView.swift */; };
 		6DA394962EA7071600335E5E /* PDF_ConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA394922EA7071600335E5E /* PDF_ConverterApp.swift */; };
 		6DA396E32EA71F7800335E5E /* FilesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396E22EA71F7800335E5E /* FilesContentView.swift */; };
-		6DA396E52EA71F8900335E5E /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396E42EA71F8900335E5E /* ConverterView.swift */; };
-		6DA396E72EA71FAA00335E5E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396E62EA71FAA00335E5E /* MainTabView.swift */; };
 		6DA396EB2EA7228D00335E5E /* ChoosePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396EA2EA7228D00335E5E /* ChoosePhotoView.swift */; };
 		6DA396EE2EA7267F00335E5E /* photo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6DA396ED2EA7267F00335E5E /* photo.icns */; };
 		6DA396EF2EA7267F00335E5E /* files.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA396EC2EA7267F00335E5E /* files.png */; };
 		6DA396F32EA72CC700335E5E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396F22EA72CC700335E5E /* CustomNavigationBar.swift */; };
 		6DA396F52EA754CE00335E5E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396F42EA754CE00335E5E /* CustomTabBar.swift */; };
+		6DA396F72EA75D6600335E5E /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396F62EA75D6600335E5E /* EmptyView.swift */; };
+		6DA396F92EA76A7B00335E5E /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396F82EA76A7B00335E5E /* ImagePickerView.swift */; };
+		6DA396FB2EA7771A00335E5E /* PDFDocumentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396FA2EA7771A00335E5E /* PDFDocumentItem.swift */; };
+		6DA396FD2EA78ED800335E5E /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396FC2EA78ED800335E5E /* PDFView.swift */; };
+		6DA396FF2EA79B2600335E5E /* PDFNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396FE2EA79B2600335E5E /* PDFNameAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +29,16 @@
 		6DA394912EA7071600335E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6DA394922EA7071600335E5E /* PDF_ConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF_ConverterApp.swift; sourceTree = "<group>"; };
 		6DA396E22EA71F7800335E5E /* FilesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesContentView.swift; sourceTree = "<group>"; };
-		6DA396E42EA71F8900335E5E /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
-		6DA396E62EA71FAA00335E5E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6DA396EA2EA7228D00335E5E /* ChoosePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoView.swift; sourceTree = "<group>"; };
 		6DA396EC2EA7267F00335E5E /* files.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = files.png; sourceTree = "<group>"; };
 		6DA396ED2EA7267F00335E5E /* photo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = photo.icns; sourceTree = "<group>"; };
 		6DA396F22EA72CC700335E5E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		6DA396F42EA754CE00335E5E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		6DA396F62EA75D6600335E5E /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		6DA396F82EA76A7B00335E5E /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		6DA396FA2EA7771A00335E5E /* PDFDocumentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocumentItem.swift; sourceTree = "<group>"; };
+		6DA396FC2EA78ED800335E5E /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		6DA396FE2EA79B2600335E5E /* PDFNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFNameAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +71,10 @@
 		6DA394932EA7071600335E5E /* PDF Converter */ = {
 			isa = PBXGroup;
 			children = (
-				6DA396F02EA72C7C00335E5E /* Components */,
 				6DA396A22EA7108900335E5E /* App */,
+				6DA396F02EA72C7C00335E5E /* Components */,
 				6DA396A42EA7134000335E5E /* Services */,
-				6DA396E82EA721A700335E5E /* Model */,
+				6DA396E82EA721A700335E5E /* Models */,
 				6DA394972EA70DFA00335E5E /* Core */,
 				6DA394912EA7071600335E5E /* ContentView.swift */,
 				6DA394902EA7071600335E5E /* Assets.xcassets */,
@@ -81,9 +87,7 @@
 		6DA394972EA70DFA00335E5E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				6DA396E12EA71E3800335E5E /* TabView */,
 				6DA396A52EA7142B00335E5E /* FilesView */,
-				6DA396A32EA712D900335E5E /* ConverterView */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -94,14 +98,6 @@
 				6DA394922EA7071600335E5E /* PDF_ConverterApp.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		6DA396A32EA712D900335E5E /* ConverterView */ = {
-			isa = PBXGroup;
-			children = (
-				6DA396E42EA71F8900335E5E /* ConverterView.swift */,
-			);
-			path = ConverterView;
 			sourceTree = "<group>";
 		};
 		6DA396A42EA7134000335E5E /* Services */ = {
@@ -120,25 +116,20 @@
 			path = FilesView;
 			sourceTree = "<group>";
 		};
-		6DA396E12EA71E3800335E5E /* TabView */ = {
+		6DA396E82EA721A700335E5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6DA396E62EA71FAA00335E5E /* MainTabView.swift */,
+				6DA396FA2EA7771A00335E5E /* PDFDocumentItem.swift */,
 			);
-			path = TabView;
-			sourceTree = "<group>";
-		};
-		6DA396E82EA721A700335E5E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6DA396E92EA7222800335E5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6DA396EA2EA7228D00335E5E /* ChoosePhotoView.swift */,
+				6DA396F62EA75D6600335E5E /* EmptyView.swift */,
+				6DA396FC2EA78ED800335E5E /* PDFView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +147,8 @@
 			children = (
 				6DA396F22EA72CC700335E5E /* CustomNavigationBar.swift */,
 				6DA396F42EA754CE00335E5E /* CustomTabBar.swift */,
+				6DA396F82EA76A7B00335E5E /* ImagePickerView.swift */,
+				6DA396FE2EA79B2600335E5E /* PDFNameAlert.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -234,10 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DA396E72EA71FAA00335E5E /* MainTabView.swift in Sources */,
 				6DA394952EA7071600335E5E /* ContentView.swift in Sources */,
+				6DA396F72EA75D6600335E5E /* EmptyView.swift in Sources */,
 				6DA396EB2EA7228D00335E5E /* ChoosePhotoView.swift in Sources */,
-				6DA396E52EA71F8900335E5E /* ConverterView.swift in Sources */,
+				6DA396FD2EA78ED800335E5E /* PDFView.swift in Sources */,
+				6DA396F92EA76A7B00335E5E /* ImagePickerView.swift in Sources */,
+				6DA396FF2EA79B2600335E5E /* PDFNameAlert.swift in Sources */,
+				6DA396FB2EA7771A00335E5E /* PDFDocumentItem.swift in Sources */,
 				6DA396F52EA754CE00335E5E /* CustomTabBar.swift in Sources */,
 				6DA394962EA7071600335E5E /* PDF_ConverterApp.swift in Sources */,
 				6DA396E32EA71F7800335E5E /* FilesContentView.swift in Sources */,
@@ -374,6 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T6NP5VY79P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -402,6 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T6NP5VY79P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
