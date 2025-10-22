@@ -20,7 +20,6 @@
 		6DA396FD2EA78ED800335E5E /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396FC2EA78ED800335E5E /* PDFView.swift */; };
 		6DA396FF2EA79B2600335E5E /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA396FE2EA79B2600335E5E /* CustomAlertView.swift */; };
 		6DA397032EA835EA00335E5E /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397022EA835EA00335E5E /* FilesViewModel.swift */; };
-		6DA397052EA8362900335E5E /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397042EA8362900335E5E /* PDFService.swift */; };
 		6DA397092EA83C6900335E5E /* PDFListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397082EA83C6900335E5E /* PDFListView.swift */; };
 		6DA3970B2EA83C8D00335E5E /* MergePDFSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3970A2EA83C8D00335E5E /* MergePDFSelectorView.swift */; };
 		6DA397452EA84EE300335E5E /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397442EA84EE300335E5E /* DocumentPickerView.swift */; };
@@ -28,6 +27,8 @@
 		6DA397492EA8865000335E5E /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397482EA8865000335E5E /* PDFReaderView.swift */; };
 		6DA3974C2EA8872600335E5E /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA3974B2EA8872600335E5E /* PDFKit.framework */; };
 		6DA3974E2EA8A9A000335E5E /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3974D2EA8A9A000335E5E /* PDFKitView.swift */; };
+		6DA397722EA8B8D700335E5E /* PDFModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397702EA8B8D700335E5E /* PDFModel.xcdatamodeld */; };
+		6DA397742EA8B94B00335E5E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA397732EA8B94B00335E5E /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,6 @@
 		6DA396FC2EA78ED800335E5E /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
 		6DA396FE2EA79B2600335E5E /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		6DA397022EA835EA00335E5E /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
-		6DA397042EA8362900335E5E /* PDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFService.swift; sourceTree = "<group>"; };
 		6DA397082EA83C6900335E5E /* PDFListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListView.swift; sourceTree = "<group>"; };
 		6DA3970A2EA83C8D00335E5E /* MergePDFSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergePDFSelectorView.swift; sourceTree = "<group>"; };
 		6DA397442EA84EE300335E5E /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
@@ -53,7 +53,17 @@
 		6DA397482EA8865000335E5E /* PDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 		6DA3974B2EA8872600335E5E /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		6DA3974D2EA8A9A000335E5E /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
+		6DA397712EA8B8D700335E5E /* PDFModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PDFModel.xcdatamodel; sourceTree = "<group>"; };
+		6DA397732EA8B94B00335E5E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6DA3976F2EA8B8AB00335E5E /* PDFService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PDFService;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6DA3947F2EA7070400335E5E /* Frameworks */ = {
@@ -118,8 +128,8 @@
 		6DA396A42EA7134000335E5E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6DA3974F2EA8ABE100335E5E /* CoreData */,
-				6DA397042EA8362900335E5E /* PDFService.swift */,
+				6DA3974F2EA8ABE100335E5E /* Storage */,
+				6DA3976F2EA8B8AB00335E5E /* PDFService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -192,11 +202,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6DA3974F2EA8ABE100335E5E /* CoreData */ = {
+		6DA3974F2EA8ABE100335E5E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				6DA397732EA8B94B00335E5E /* Persistence.swift */,
+				6DA397702EA8B8D700335E5E /* PDFModel.xcdatamodeld */,
 			);
-			path = CoreData;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +225,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6DA3976F2EA8B8AB00335E5E /* PDFService */,
 			);
 			name = "PDF Converter";
 			packageProductDependencies = (
@@ -271,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA397722EA8B8D700335E5E /* PDFModel.xcdatamodeld in Sources */,
 				6DA394952EA7071600335E5E /* ContentView.swift in Sources */,
 				6DA396F72EA75D6600335E5E /* EmptyView.swift in Sources */,
+				6DA397742EA8B94B00335E5E /* Persistence.swift in Sources */,
 				6DA396EB2EA7228D00335E5E /* ChoosePhotoView.swift in Sources */,
 				6DA396FD2EA78ED800335E5E /* PDFView.swift in Sources */,
 				6DA397492EA8865000335E5E /* PDFReaderView.swift in Sources */,
@@ -287,7 +304,6 @@
 				6DA397472EA8509700335E5E /* ConvertButton.swift in Sources */,
 				6DA397452EA84EE300335E5E /* DocumentPickerView.swift in Sources */,
 				6DA3970B2EA83C8D00335E5E /* MergePDFSelectorView.swift in Sources */,
-				6DA397052EA8362900335E5E /* PDFService.swift in Sources */,
 				6DA396F32EA72CC700335E5E /* CustomNavigationBar.swift in Sources */,
 				6DA397092EA83C6900335E5E /* PDFListView.swift in Sources */,
 			);
@@ -495,6 +511,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6DA397702EA8B8D700335E5E /* PDFModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6DA397712EA8B8D700335E5E /* PDFModel.xcdatamodel */,
+			);
+			currentVersion = 6DA397712EA8B8D700335E5E /* PDFModel.xcdatamodel */;
+			path = PDFModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6DA3947A2EA7070400335E5E /* Project object */;
 }
