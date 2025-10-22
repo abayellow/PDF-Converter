@@ -1,9 +1,8 @@
-////
-////  PDFReaderView.swift
-////  PDF Converter
-////
-////  Created by Alexander Abanshin on 22.10.2025.
-////
+//
+//  PDFReaderView.swift
+//  PDF Converter
+//
+//  Created by Alexander Abanshin on 22.10.2025.
 //
 
 
@@ -11,72 +10,74 @@ import SwiftUI
 import PDFKit
 
 struct PDFReaderView: View {
-    @State var pdfURL: URL
     @State private var document: PDFDocument
     @State private var selectedPageIndex: Int?
     @State private var showDeleteAlert = false
+    @State private var pdfURL: URL
     @Environment(\.dismiss) private var dismiss
 
     init(pdfURL: URL) {
         self._pdfURL = State(initialValue: pdfURL)
-        if let doc = PDFDocument(url: pdfURL) {
-            self._document = State(initialValue: doc)
-        } else {
-            fatalError("Не удалось загрузить PDF по пути \(pdfURL)")
-        }
+        self._document = State(initialValue: PDFReaderView.loadDocument(from: pdfURL))
     }
 
     var body: some View {
         VStack(spacing: 0) {
-//            navigationBar
-            CustomNavigationBar(title: "PDF Reader")
+            CustomNavigationBar(title: "PDF Reader", subtitile: "Read your PDF files")
 
             PDFKitView(document: $document, selectedPageIndex: $selectedPageIndex)
                 .edgesIgnoringSafeArea(.bottom)
 
-            // Кнопка удаления выбранной страницы
             if let index = selectedPageIndex {
-                deleteButton(for: index)
+                DeletePageButton(index: index) {
+                    showDeleteAlert = true
+                }
             }
         }
         .alert("Delete page?", isPresented: $showDeleteAlert) {
-            Button("Delete", role: .destructive) {
-                deleteSelectedPage()
-            }
+            Button("Delete", role: .destructive, action: deleteSelectedPage)
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("This action cannot be undone.")
         }
         .navigationBarHidden(true)
     }
-}
 
-// MARK: - Subviews
-private extension PDFReaderView {
-    var navigationBar: some View {
-        HStack {
-            Button(action: { dismiss() }) {
-                Image(systemName: "chevron.left")
-                    .font(.title3)
-                    .foregroundColor(.blue)
-            }
-            Spacer()
-            Text(pdfURL.lastPathComponent)
-                .font(.headline)
-                .lineLimit(1)
-                .truncationMode(.middle)
-            Spacer()
-            Spacer().frame(width: 30)
+    private func deleteSelectedPage() {
+        guard let index = selectedPageIndex else { return }
+        document.removePage(at: index)
+        if FileManager.default.fileExists(atPath: pdfURL.path) {
+            document.write(to: pdfURL)
+        } else {
+            print("Не удалось сохранить: файл отсутствует по пути \(pdfURL.path)")
         }
-        .padding()
-        .background(Color(UIColor.systemGray6))
-        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
+        selectedPageIndex = nil
     }
 
-    func deleteButton(for index: Int) -> some View {
-        Button(role: .destructive) {
-            showDeleteAlert = true
-        } label: {
+    // MARK: - Document Loading
+    private static func loadDocument(from url: URL) -> PDFDocument {
+        if FileManager.default.fileExists(atPath: url.path),
+           let doc = PDFDocument(url: url) {
+            return doc
+        } else {
+            let empty = PDFDocument()
+            if let img = UIImage(systemName: "xmark.octagon"),
+               let page = PDFPage(image: img) {
+                empty.insert(page, at: 0)
+            }
+            print("PDF-файл не найден по пути: \(url.path)")
+            return empty
+        }
+    }
+}
+
+// MARK: - Delete Button Component
+struct DeletePageButton: View {
+    let index: Int
+    let action: () -> Void
+
+    var body: some View {
+        Button(role: .destructive, action: action) {
             Text("Delete Page \(index + 1)")
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -86,17 +87,8 @@ private extension PDFReaderView {
                 .padding()
         }
     }
-
-    func deleteSelectedPage() {
-        if let index = selectedPageIndex {
-            document.removePage(at: index)
-            document.write(to: pdfURL)
-            selectedPageIndex = nil
-        }
-    }
 }
 
-// MARK: - Preview
 #Preview {
     let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("TestPreview.pdf")
     if !FileManager.default.fileExists(atPath: tempURL.path) {

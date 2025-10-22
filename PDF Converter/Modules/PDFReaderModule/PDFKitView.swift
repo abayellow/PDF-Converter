@@ -1,9 +1,9 @@
-////
-////  PDFKitView.swift
-////  PDF Converter
-////
-////  Created by Alexander Abanshin on 22.10.2025.
-////
+//
+//  PDFKitView.swift
+//  PDF Converter
+//
+//  Created by Alexander Abanshin on 22.10.2025.
+//
 
 import SwiftUI
 import PDFKit
@@ -19,7 +19,6 @@ struct PDFKitView: UIViewRepresentable {
         pdfView.displayDirection = .vertical
         pdfView.document = document
 
-        // Tap Gesture для выбора страницы
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.pageTapped(_:)))
         pdfView.addGestureRecognizer(tapGesture)
 
