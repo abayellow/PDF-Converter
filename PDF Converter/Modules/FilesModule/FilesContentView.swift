@@ -42,13 +42,21 @@ struct FilesContentView: View {
         .background(Color.gray.opacity(0.1))
         
         // MARK: - Photo/File Picker
+//        .sheet(isPresented: $vm.showSheet) {
+//            ChoosePhotoView { name, images, files in
+//                vm.addPDF(from: images, name: name)
+//
+//            }
+//        }
         .sheet(isPresented: $vm.showSheet) {
             ChoosePhotoView { name, images, files in
-                vm.addPDF(from: images, name: name)
-
+                if !images.isEmpty {
+                    vm.addPDF(from: images, name: name)
+                } else if !files.isEmpty {
+                    vm.addPDF(from: files, name: name)
+                }
             }
         }
-        
         // MARK: - PDF Viewer
         .sheet(item: $selectedPDF) { identifiablePDF in
             PDFReaderView(pdfURL: identifiablePDF.url)

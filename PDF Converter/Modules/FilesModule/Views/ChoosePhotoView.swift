@@ -80,9 +80,11 @@ struct ChoosePhotoView: View {
         .padding()
         .sheet(isPresented: $showPhotoPicker) {
             ImagePickerView(images: $selectedImages)
+                .ignoresSafeArea()
         }
         .sheet(isPresented: $showFilePicker) {
             DocumentPickerView(selectedFiles: $selectedFiles)
+                .ignoresSafeArea()
         }
         .overlay {
             if showNameAlert {

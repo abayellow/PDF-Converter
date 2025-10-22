@@ -20,7 +20,7 @@ struct PDFService {
         let safeName = name.replacingOccurrences(of: "/", with: "-")
         var outputURL = documentsURL.appendingPathComponent("\(safeName).pdf")
 
-        // если файл с таким именем уже существует — добавим индекс
+        // если файл с таким именем уже существует добавим индекс
         var index = 1
         while FileManager.default.fileExists(atPath: outputURL.path) {
             outputURL = documentsURL.appendingPathComponent("\(safeName)_\(index).pdf")
@@ -55,7 +55,13 @@ struct PDFService {
                 guard let page = pdf.page(at: i) else { continue }
                 let pageRect = page.getBoxRect(.mediaBox)
                 UIGraphicsBeginPDFPageWithInfo(pageRect, nil)
-                UIGraphicsGetCurrentContext()?.drawPDFPage(page)
+                if let context = UIGraphicsGetCurrentContext() {
+                    context.saveGState()
+                    context.translateBy(x: 0, y: pageRect.height)
+                    context.scaleBy(x: 1.0, y: -1.0)
+                    context.drawPDFPage(page)
+                    context.restoreGState()
+                }
             }
         }
         UIGraphicsEndPDFContext()
@@ -126,7 +132,10 @@ struct PDFService {
 
             let scaleX = size.width / pageRect.width
             let scaleY = size.height / pageRect.height
-            ctx.cgContext.scaleBy(x: scaleX, y: scaleY)
+//            ctx.cgContext.scaleBy(x: scaleX, y: scaleY)
+//            ctx.cgContext.drawPDFPage(page)
+            ctx.cgContext.translateBy(x: 0, y: size.height)
+            ctx.cgContext.scaleBy(x: scaleX, y: -scaleY)
             ctx.cgContext.drawPDFPage(page)
         }
 

@@ -23,7 +23,7 @@ struct PDFReaderView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavigationBar(title: "PDF Reader", subtitile: "Read your PDF files")
+            CustomNavigationBar(title: "PDF Reader", subtitile: "")
 
             PDFKitView(document: $document, selectedPageIndex: $selectedPageIndex)
                 .edgesIgnoringSafeArea(.bottom)

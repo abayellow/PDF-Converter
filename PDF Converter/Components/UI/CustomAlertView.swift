@@ -23,7 +23,7 @@ struct CustomAlertView: View {
 
             VStack(spacing: 5) {
                 HStack(spacing: 8) {
-                    Text("Safe PDF")
+                    Text("Save PDF")
                         .font(.headline)
                         .foregroundColor(.blue)
                     Image(.pdf)       // имя картинки в ассетах
