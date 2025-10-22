@@ -61,49 +61,7 @@ struct PDFListRow: View {
     }
 }
 
-//struct PDFListRow: View {
-//    let document: PDFDocumentItem
-//    let onOpen: () -> Void
-//    let onShare: () -> Void
-//    let onMerge: () -> Void
-//    let onDelete: () -> Void
-//
-//    var body: some View {
-//        Button(action: onOpen) {
-//            HStack(spacing: 12) {
-//                Image(uiImage: document.preview)
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(width: 60, height: 60)
-//                    .cornerRadius(10)
-//                    .clipped()
-//
-//                VStack(alignment: .leading, spacing: 4) {
-//                    Text(document.name)
-//                        .font(.headline)
-//                        .foregroundColor(.primary)
-//                    Text(document.date.formatted(date: .abbreviated, time: .shortened))
-//                        .font(.caption)
-//                        .foregroundColor(.secondary)
-//                }
-//                Spacer()
-//            }
-//            .cardStyle()
-//        }
-//        .buttonStyle(.plain)
-//        .contextMenu {
-//            Button(action: onShare) {
-//                Label("Share", systemImage: "square.and.arrow.up")
-//            }
-//            Button(action: onMerge) {
-//                Label("Merge", systemImage: "link")
-//            }
-//            Button(role: .destructive, action: onDelete) {
-//                Label("Delete", systemImage: "trash")
-//            }
-//        }
-//    }
-//}
+
 
 // MARK: - View Modifier
 extension View {

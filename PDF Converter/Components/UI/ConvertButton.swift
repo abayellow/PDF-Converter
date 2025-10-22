@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// MARK: - ConvertButtonView
 struct ConvertButtonView: View {
     let action: () -> Void
 

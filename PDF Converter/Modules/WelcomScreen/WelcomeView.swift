@@ -15,14 +15,11 @@ struct WelcomeView: View {
         ZStack {
             
             if navigateToMain {
-                // Основной экран
                 FilesContentView()
             } else {
                 VStack(spacing: 20) {
                     Spacer()
-                    
-                    // App Icon
-                    Image(.pdf) // имя твоей иконки
+                    Image(.pdf)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 120)
@@ -32,7 +29,6 @@ struct WelcomeView: View {
                             value: animateLogo
                         )
                     
-                    // Animated Label
                     Text("PDF Converter")
                         .font(.system(size: 36, weight: .bold, design: .rounded))
                         .foregroundColor(.blue)
@@ -47,7 +43,6 @@ struct WelcomeView: View {
         .onAppear {
             animateLogo = true
             
-            // Автопереход через 2 секунды
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 withAnimation(.easeOut) {
                     navigateToMain = true

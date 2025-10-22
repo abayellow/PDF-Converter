@@ -32,7 +32,6 @@ struct PDFView: View {
                        .cornerRadius(8)
                        .shadow(color: .black.opacity(0.1), radius: 1, x: 0, y: 1)
                    
-                   // Плашка с расширением
                    Text(fileExtension)
                        .font(.caption2)
                        .bold()
@@ -61,29 +60,7 @@ struct PDFView: View {
            .cornerRadius(16)
            .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
        }
-//    var body: some View {
-//        HStack(spacing: 12) {
-//            Image(uiImage: preview)
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 50, height: 60)
-//                .cornerRadius(8)
-//            
-//            VStack(alignment: .leading, spacing: 4) {
-//                Text(name)
-//                    .font(.headline)
-//                Text(dateFormatter.string(from: date))
-//                    .font(.subheadline)
-//                    .foregroundColor(.secondary)
-//            }
-//            
-//            Spacer()
-//        }
-//        .padding()
-//        .background(Color(.systemBackground))
-//        .cornerRadius(16)
-//        .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
-//    }
+
 }
 
 #Preview {
