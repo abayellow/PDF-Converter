@@ -13,7 +13,7 @@ struct CustomTabBar: View {
     var body: some View {
         Rectangle()
             .frame(height: 1)
-            .foregroundColor(Color.white.opacity(0.5)) // или светло-серый
+            .foregroundColor(Color.white.opacity(0.5)) 
             .edgesIgnoringSafeArea(.horizontal)
         
         HStack {
