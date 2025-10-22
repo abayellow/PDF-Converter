@@ -9,7 +9,6 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ChoosePhotoView: View {
-    
     @State private var selectedImages: [UIImage] = []
     @State private var selectedFiles: [URL] = []
     @State private var showPhotoPicker = false
@@ -63,7 +62,6 @@ struct ChoosePhotoView: View {
             }
 
 
-            // Кнопка Convert (одна на все)
             if !selectedImages.isEmpty || !selectedFiles.isEmpty {
                 Button("Convert") {
                     showNameAlert = true
